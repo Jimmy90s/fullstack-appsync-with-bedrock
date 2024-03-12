@@ -1,12 +1,5 @@
 # Fullstack AI on AWS
 
-![ai on aws](./fullstack-ai-aws.png)
-👉 https://youtu.be/EEhgiHnnHXg 👈
-
-If you've ever wanted to complete guide to building your next application on AWS, this is the repo for you.
-
-> 🗒️ This repo is part of a YouTube video that describes how each of the various pieces are built and deployed.
-
 ## Overview
 
 This repo brings together [core AWS services that every app needs](https://youtube.com/shorts/DfwhE6yXcCM?si=ds2hBN2Ia2pIfdC3):
@@ -30,15 +23,15 @@ This project expects a file called `aws-exports.ts`. The Youtube video shows how
 
 ```ts
 export const config = {
-	aws_project_region: '',
-	Auth: {
-		region: '',
-		userPoolId: '',
-		userPoolWebClientId: '',
-		identityPoolId: '',
-	},
-	aws_appsync_graphqlEndpoint: '',
-	aws_appsync_region: '',
-	aws_appsync_authenticationType: '',
-}
+  aws_project_region: "",
+  Auth: {
+    region: "",
+    userPoolId: "",
+    userPoolWebClientId: "",
+    identityPoolId: "",
+  },
+  aws_appsync_graphqlEndpoint: "",
+  aws_appsync_region: "",
+  aws_appsync_authenticationType: "",
+};
 ```
