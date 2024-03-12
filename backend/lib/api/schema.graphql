@@ -1,0 +1,21 @@
+type StockExplanation
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: public, provider: iam, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+}
+
+type BedRockStockExplanation {
+  title: String!
+  description: String!
+}
+
+type Query {
+  generateStockExplanation(prompt: String): String! @aws_cognito_user_pools
+}
