@@ -36,7 +36,7 @@ function Home() {
     }
   };
   return (
-    <div className="justify-items-center bg-gradient-to-bl from-base-200 to-slate-800">
+    <div className="justify-items-center bg-gradient-to-bl from-base-300 to-slate-700">
       <div className="hero min-h-screen">
         <div className="hero-content text-center">
           <div className="">
@@ -92,7 +92,7 @@ function Home() {
                 </span>
               </Link>
             </div>
-            <div className="h-96 carousel carousel-vertical rounded-box gap-8">
+            <div className="h-96 carousel carousel-vertical rounded-box gap-5 mt-3">
               <div className="carousel-item">
                 <Link
                   href={"/home"}
@@ -105,15 +105,15 @@ function Home() {
                   />
                 </figure> */}
                   <div className="card-body">
-                    <h2 className="card-title text-primary-content">
+                    <h2 className="card-title text-primary-content justify-between">
                       Investor Dashboard
                       <div className="badge badge-secondary">LIVE</div>
                     </h2>
 
                     <p>
                       A web applications to provide predictions and suggestions
-                      on Asset Pricing (Stocks & Real Estate) using a SageMaker
-                      machine learning pipeline. Click Here to View
+                      on Asset Pricing (Stocks & Real Estate) using AWS
+                      SageMaker and MlFlow machine learning pipeline.
                     </p>
 
                     <div>
@@ -128,6 +128,7 @@ function Home() {
                   </div>
                 </Link>
               </div>
+
               <div className="carousel-item">
                 <Link
                   href={"/my-explanations"}
@@ -140,7 +141,45 @@ function Home() {
                   />
                 </figure> */}
                   <div className="card-body">
-                    <h2 className="card-title text-primary-content">
+                    <h2 className="card-title text-primary-content justify-between">
+                      Machine Learning Pipeline
+                      <div className="badge badge-secondary">GitHub</div>
+                    </h2>
+
+                    <p>
+                      This repository provides AI/ML service(MachineLearning
+                      model serving) modernization solution using Amazon
+                      SageMaker, AWS CDK, and AWS Fargate and Lambda. This
+                      repository is basically a CDK-Project, but it is organized
+                      so that MLDevOps(ML Scientist + SW Developer + Infra
+                      Operator) can collaborate.
+                    </p>
+
+                    <div>
+                      <div className="flex">
+                        <div className="badge badge-outline">AI</div>
+                        <div className="badge badge-outline">ML</div>
+                        <div className="badge badge-outline">Pipeline</div>
+                        <div className="badge badge-outline">SageMaker</div>
+                        <div className="badge badge-outline">Fargate</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+              <div className="carousel-item">
+                <Link
+                  href={"/my-explanations"}
+                  className="card w-96 bg-base-100 shadow-xl"
+                >
+                  {/* <figure>
+                  <img
+                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                    alt="Shoes"
+                  />
+                </figure> */}
+                  <div className="card-body">
+                    <h2 className="card-title text-primary-content justify-between">
                       Fullstack Web Application
                       <div className="badge badge-secondary">GitHub</div>
                     </h2>
@@ -167,44 +206,6 @@ function Home() {
               <div className="carousel-item">
                 <Link
                   href={"/my-explanations"}
-                  className="card w-96 bg-base-100 shadow-xl"
-                >
-                  {/* <figure>
-                  <img
-                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                    alt="Shoes"
-                  />
-                </figure> */}
-                  <div className="card-body">
-                    <h2 className="card-title text-primary-content">
-                      Machine Learning Pipeline
-                      <div className="badge badge-secondary">GitHub</div>
-                    </h2>
-
-                    <p>
-                      This repository provides AI/ML service(MachineLearning
-                      model serving) modernization solution using Amazon
-                      SageMaker, AWS CDK, and AWS Fargate and Lambda. This
-                      repository is basically a CDK-Project, but it is organized
-                      as follows so that MLDevOps(ML Scientist + SW Developer +
-                      Infra Operator) can collaborate.
-                    </p>
-
-                    <div>
-                      <div className="flex">
-                        <div className="badge badge-outline">AI</div>
-                        <div className="badge badge-outline">ML</div>
-                        <div className="badge badge-outline">Pipeline</div>
-                        <div className="badge badge-outline">SageMaker</div>
-                        <div className="badge badge-outline">Fargate</div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-              <div className="carousel-item">
-                <Link
-                  href={"/my-explanations"}
                   className="card w-96 bg-slate-700 shadow-xl"
                 >
                   {/* <figure>
@@ -214,7 +215,7 @@ function Home() {
                   />
                 </figure> */}
                   <div className="card-body">
-                    <h2 className="card-title text-primary-content">
+                    <h2 className="card-title text-primary-content justify-between">
                       Research{" "}
                       <div className="badge badge-secondary">GitHub</div>
                     </h2>
