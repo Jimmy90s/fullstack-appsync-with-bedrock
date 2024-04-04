@@ -28,12 +28,12 @@ import { getAll } from "@/utils/db";
 // };
 
 // console.log(main());
-async function Home() {
-  const data = await getAll();
-  if (!data) {
-    return <>no data</>;
-  }
-  console.log(data);
+function Home() {
+  //   const data = await getAll();
+  //   if (!data) {
+  //     return <>no data</>;
+  //   }
+  //   console.log(data);
   // const [title, setTitle] = useState("");
   // const [description, setDescription] = useState("");
   // const handler = async (req: string) => {
