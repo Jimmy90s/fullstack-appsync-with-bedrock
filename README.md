@@ -1,5 +1,7 @@
 # Fullstack AI on AWS
 
+https://main.d22x2dzdcx8w4l.amplifyapp.com/
+
 ## Overview
 
 This repo brings together [core AWS services that every app needs](https://youtube.com/shorts/DfwhE6yXcCM?si=ds2hBN2Ia2pIfdC3):
