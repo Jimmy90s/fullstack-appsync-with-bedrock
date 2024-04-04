@@ -16,13 +16,13 @@ export class BackendStack extends cdk.Stack {
       appName,
     });
 
-    const api = new ApiGatewayToLambda(this, "ApiGatewayToLambdaPattern", {
-      lambdaFunctionProps: {
-        runtime: lambda.Runtime.PYTHON_3_10,
-        handler: "index.handler",
-        code: lambda.Code.fromAsset(`lambda`),
-      },
-    });
+    // const api = new ApiGatewayToLambda(this, "ApiGatewayToLambdaPattern", {
+    //   lambdaFunctionProps: {
+    //     runtime: lambda.Runtime.PYTHON_3_10,
+    //     handler: "index.handler",
+    //     code: lambda.Code.fromAsset(`lambda`),
+    //   },
+    // });
 
     // const stockAPI = createAmplifyGraphQLAPI(this, {
     //   appName,
