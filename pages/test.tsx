@@ -37,7 +37,7 @@ export default function Profile() {
           </thead>
           <tbody>
             {data?.map((explanation) => (
-              <tr className="hover">
+              <tr key={explanation.ticker} className="hover">
                 <td>{explanation.ticker}</td>
                 <td>{(Number(explanation.weight) * 100).toFixed(1)}%</td>
                 <td>{(Number(explanation.return) * 100).toFixed(1)}%</td>
