@@ -1,4 +1,25 @@
-type StockExplanation
+# type StockExplanation
+#   @model
+#   @auth(
+#     rules: [
+#       { allow: owner }
+#       { allow: public, provider: iam, operations: [read] }
+#     ]
+#   ) {
+#   id: ID!
+#   title: String!
+#   description: String
+# }
+
+# type BedRockStockExplanation {
+#   title: String!
+#   description: String!
+# }
+
+# type Query {
+#   generateStockExplanation(prompt: String): String! @aws_cognito_user_pools
+# }
+type CorePortfolio
   @model
   @auth(
     rules: [
@@ -6,16 +27,9 @@ type StockExplanation
       { allow: public, provider: iam, operations: [read] }
     ]
   ) {
-  id: ID!
-  title: String!
-  description: String
-}
-
-type BedRockStockExplanation {
-  title: String!
-  description: String!
-}
-
-type Query {
-  generateStockExplanation(prompt: String): String! @aws_cognito_user_pools
+  date: String! @primaryKey(sortKeyFields: ["ticker"])
+  ticker: String!
+  return: String
+  weight: String
+  weighted_return: String
 }

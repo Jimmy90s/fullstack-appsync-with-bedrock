@@ -1,6 +1,6 @@
-import { ListStockExplanationsQuery, StockExplanation } from "@/src/API";
+import { CorePortfolio, ListCorePortfoliosQuery } from "@/backend/src/API";
 import { deleteStockExplanation } from "@/src/graphql/mutations";
-import { listStockExplanations } from "@/src/graphql/queries";
+import { listCorePortfolios } from "@/backend/src/graphql/queries";
 import { GraphQLResult } from "@aws-amplify/api-graphql";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import { API } from "aws-amplify";
@@ -8,21 +8,21 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Home() {
-  const [explanations, setExplanations] = useState<[] | StockExplanation[]>([]);
+  const [explanations, setExplanations] = useState<[] | CorePortfolio[]>([]);
   const { user } = useAuthenticator((context) => [context.user]);
   console.log({ user });
   useEffect(() => {
     const explanationPromise = API.graphql({
-      query: listStockExplanations,
+      query: listCorePortfolios,
       authMode: user ? "AMAZON_COGNITO_USER_POOLS" : "AWS_IAM",
-    }) as Promise<GraphQLResult<ListStockExplanationsQuery>>;
+    }) as Promise<GraphQLResult<ListCorePortfoliosQuery>>;
 
     explanationPromise.then((res) => {
-      console.log(res.data?.listStockExplanations?.items);
-      const items = res.data?.listStockExplanations?.items ?? [];
+      console.log(res.data?.listCorePortfolios?.items);
+      const items = res.data?.listCorePortfolios?.items ?? [];
 
       setExplanations(
-        items.filter((item): item is StockExplanation => Boolean(item))
+        items.filter((item): item is CorePortfolio => Boolean(item))
       );
     });
   }, [user]);
@@ -49,7 +49,7 @@ function Home() {
 
             <div className="flex justify-around">
               <Link
-                href={""}
+                href={"https://www.linkedin.com/in/jameslaurieca/"}
                 type="button"
                 data-twe-ripple-init
                 data-twe-ripple-color="light"
@@ -66,7 +66,9 @@ function Home() {
                 </span>
               </Link>
               <Link
-                href={""}
+                href={
+                  "https://docs.google.com/document/d/1qBF6Mz6ML_tyvgWOHzLG0s8jrz-Y_cIvfKkKjhMhdfQ/edit?usp=sharing"
+                }
                 type="button"
                 data-twe-ripple-init
                 data-twe-ripple-color="light"
@@ -75,7 +77,7 @@ function Home() {
                 Resume
               </Link>
               <Link
-                href={""}
+                href={"https://github.com/Jimmy90s"}
                 type="button"
                 data-twe-ripple-init
                 data-twe-ripple-color="light"
@@ -131,7 +133,7 @@ function Home() {
 
               <div className="carousel-item">
                 <Link
-                  href={"/my-explanations"}
+                  href={"https://github.com/Jimmy90s/aws-mlflow-sagemaker-cdk"}
                   className="card w-96 bg-slate-700 shadow-xl"
                 >
                   {/* <figure>
@@ -169,7 +171,9 @@ function Home() {
               </div>
               <div className="carousel-item">
                 <Link
-                  href={"/my-explanations"}
+                  href={
+                    "https://github.com/Jimmy90s/fullstack-appsync-with-bedrock"
+                  }
                   className="card w-96 bg-base-100 shadow-xl"
                 >
                   {/* <figure>
@@ -205,7 +209,7 @@ function Home() {
               </div>
               <div className="carousel-item">
                 <Link
-                  href={"/my-explanations"}
+                  href={"https://github.com/Jimmy90s/Quantitative-Finance"}
                   className="card w-96 bg-slate-700 shadow-xl"
                 >
                   {/* <figure>
@@ -242,26 +246,26 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* <section className="flex justify-center mt-6">
+      <section className="flex justify-center mt-6">
         <ul className="flex">
           {explanations.map((explanation) => (
             <li
               onClick={() => {
-                handleExplanationDelete(explanation.id);
+                handleExplanationDelete(explanation.date);
               }}
               className="m-3"
-              key={explanation.id}
+              key={explanation.date}
             >
               <div className="card w-96 bg-secondary text-primary-content">
                 <div className="card-body">
-                  <h2 className="card-title">{explanation.title}</h2>
-                  <p>{explanation.description}</p>
+                  <h2 className="card-title">{explanation.ticker}</h2>
+                  <p>{explanation.weight}</p>
                 </div>
               </div>
             </li>
           ))}
         </ul>
-      </section> */}
+      </section>
     </div>
   );
 }
