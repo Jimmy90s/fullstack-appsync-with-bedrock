@@ -4,7 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { useState, useEffect } from "react";
 
 export default function Profile() {
-  const [data, setData] = useState<[] | CorePortfolio[]>([]);
+  const [data, setData] = useState<null | CorePortfolio[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Profile() {
         setLoading(false);
       });
     console.log(data);
-  });
+  }, [null]);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
