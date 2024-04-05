@@ -15,7 +15,7 @@
     "@aws-sdk/client-dynamodb": "^3.540.0",
     "@aws-sdk/lib-dynamodb": "^3.540.0",
     "aws-amplify": "^5.3.17",
-    "next": "^12",
+    "next": "^14",
     "react": "^18",
     "react-dom": "^18"
   },

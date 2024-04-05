@@ -70,7 +70,7 @@ export default function Profile() {
         setLoading(false);
       });
     console.log(data);
-  }, [null]);
+  }, [data]);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
@@ -94,10 +94,10 @@ export default function Profile() {
             {data?.map((explanation) => (
               <tr key={explanation.ticker} className="hover">
                 <td>{explanation.ticker}</td>
-                <td>{(Number(explanation.weight) * 100).toFixed(1)}%</td>
-                <td>{(Number(explanation.return) * 100).toFixed(1)}%</td>
+                <td>{(Number(explanation.weight) * 100).toFixed(0)}%</td>
+                <td>{(Number(explanation.return) * 100).toFixed(2)}%</td>
                 <td>
-                  {(Number(explanation.weighted_return) * 100).toFixed(1)}%
+                  {(Number(explanation.weighted_return) * 100).toFixed(2)}%
                 </td>
               </tr>
             ))}
