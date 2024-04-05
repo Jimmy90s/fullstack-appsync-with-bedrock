@@ -1,4 +1,3 @@
-"use client";
 import { CorePortfolio } from "@/backend/src/API";
 import { Navbar } from "@/components/navbar";
 import { useState, useEffect } from "react";
