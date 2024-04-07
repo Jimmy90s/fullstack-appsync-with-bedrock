@@ -1,3 +1,4 @@
+"use client";
 // import { CorePortfolio } from "@/backend/src/API";
 import { Navbar } from "@/components/navbar";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
@@ -70,7 +71,7 @@ export default function Profile() {
         setLoading(false);
       });
     console.log(data);
-  }, [data]);
+  }, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
