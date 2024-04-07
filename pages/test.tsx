@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/navbar";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 import { useState, useEffect } from "react";
-
+import useSWR from "swr";
 type CorePortfolio = {
   __typename: "CorePortfolio";
   date: string;
@@ -59,22 +59,27 @@ type CorePortfolio = {
 //     </>
 //   );
 // }
+
+const fetcher = async (url: string) => fetch(url).then((res) => res.json());
+
 export default function Profile() {
-  const [data, setData] = useState<null | CorePortfolio[]>([]);
-  const [isLoading, setLoading] = useState(true);
+  // const [data, setData] = useState<null | CorePortfolio[]>([]);
+  // const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/api/date/route")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-    setData(data);
-  }, []);
-
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+  // useEffect(() => {
+  //   fetch("/api/date/route")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  //   setData(data);
+  // }, []);
+  const { data, error } = useSWR("/api/date/route", fetcher);
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
+  // if (isLoading) return <p>Loading...</p>;
+  // if (!data) return <p>No profile data</p>;
   console.log(data);
   return (
     <>
