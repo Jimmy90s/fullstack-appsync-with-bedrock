@@ -10,6 +10,7 @@ import { config } from "@/aws-exports";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 import { getAll } from "@/utils/db";
+import Portfolio from "./test";
 // const client = new DynamoDBClient(config.API.GraphQL);
 // const docClient = DynamoDBDocumentClient.from(client);
 
@@ -84,8 +85,11 @@ function Home() {
     <>
       <Navbar />
       <Authenticator signUpAttributes={["email"]}>
-        <section className="flex justify-center">
-          {/* <form
+        <div className="hero min-h-screen">
+          <div className="table hero-content text-center">
+            <section className="flex justify-center">
+              <Portfolio />
+              {/* <form
           onSubmit={handleSubmit}
           className="flex flex-col items-center max-w-lg"
         >
@@ -131,7 +135,9 @@ function Home() {
             </button>
           </section>
         </form> */}
-        </section>
+            </section>
+          </div>
+        </div>
       </Authenticator>
     </>
   );

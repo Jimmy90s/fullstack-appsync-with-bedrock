@@ -76,14 +76,14 @@ export default function Profile() {
   //   setData(data);
   // }, []);
   const { data, error } = useSWR("/api/date/route", fetcher);
-  if (error) return <div>Failed to load</div>;
+  // if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   // if (isLoading) return <p>Loading...</p>;
   // if (!data) return <p>No profile data</p>;
   console.log(data);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1 className=" m-3 text-center">{data[0].date.substring(0, 10)}</h1>
 
       <div className="hero min-h-screen m-3">
@@ -96,8 +96,9 @@ export default function Profile() {
               <th>Weighted Return</th>
             </tr>
           </thead>
+
           <tbody>
-            {data?.map((explanation) => (
+            {data?.map((explanation: any) => (
               <tr key={explanation.ticker} className="hover">
                 <td>{explanation.ticker}</td>
                 <td>{(Number(explanation.weight) * 100).toFixed(0)}%</td>
