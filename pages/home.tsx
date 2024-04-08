@@ -11,6 +11,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 import { getAll } from "@/utils/db";
 import Portfolio from "./test";
+const runtime = "edge";
 // const client = new DynamoDBClient(config.API.GraphQL);
 // const docClient = DynamoDBDocumentClient.from(client);
 
